@@ -146,8 +146,8 @@ function run(
   originalDirectory,
   useYarn,
 ) {
-  const allDependencies = ['@webcodesk/webcodesk-srv@latest'];
-  console.log('Installing @webcodesk/webcodesk-srv package. This might take a couple of minutes.');
+  const allDependencies = ['@emop/webcodesk-srv@latest'];
+  console.log('Installing @emop/webcodesk-srv package. This might take a couple of minutes.');
   return install(root, useYarn, allDependencies)
     .then(() => {
       console.log();

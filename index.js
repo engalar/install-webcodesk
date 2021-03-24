@@ -14,7 +14,7 @@ if (major < 8) {
       'You are running Node ' +
         currentNodeVersion +
         '.\n' +
-        '@webcodesk/init requires Node 8 or higher. \n' +
+        '@emop/init requires Node 8 or higher. \n' +
         'Please update your version of Node.'
     )
   );
