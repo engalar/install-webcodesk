@@ -27,7 +27,7 @@ const program = new commander.Command(packageJson.name)
   .action(name => {
     projectName = name;
   })
-  .option('--use-npm')
+  .option('--use-npm', '', true)
   .on('--help', () => {
     console.log(`Only ${chalk.green('<project-directory>')} is required.`);
     console.log();
@@ -81,8 +81,12 @@ function createApp(
     path.join(root, 'package.json'),
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
+  fs.writeFileSync(
+    path.join(root, '.npmrc'),
+    "@emop:registry=https://repo.eingsoft.com/artifactory/api/npm/npm-eingsoft/" + os.EOL
+  );
 
-  const useYarn = useNpm ? false : shouldUseYarn();
+  const useYarn = false;
   const originalDirectory = process.cwd();
   process.chdir(root);
   if (!useYarn && !checkThatNpmCanReadCwd()) {
